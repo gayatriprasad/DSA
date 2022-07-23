@@ -17,8 +17,8 @@ class Solution:
     
     def getLeaf(self, root, leafTree):
         
-        if root == None:
-            return False 
+        # if root == None:
+        #     return False 
         
         if root.left == None and root.right == None:
             leafTree.append(root.val)
