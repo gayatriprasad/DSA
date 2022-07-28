@@ -18,3 +18,22 @@ class Solution:
             return res
        
         return tribo(n)
+        
+        
+        
+        
+#### same solution but might exceed time limits !!! 
+class Solution:
+    def tribonacci(self, n):
+
+        if n==0:
+            return 0
+        
+        elif n==1 or n==2:
+            return 1
+        
+        else:
+            res=self.tribonacci(n-3)+self.tribonacci(n-2)+self.tribonacci(n-1)
+        
+        return res
+       
