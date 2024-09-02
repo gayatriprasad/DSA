@@ -1,0 +1,39 @@
+Problem
+Suppose you enter an ice cream store. They sell two types of ice cream: soft serve and frozen yogurt. Additionally, there are 10 flavors of soft serve and 13 flavors of frozen yogurt. You're really hungry, so you decide you can order and eat two ice creams before they melt, but are facing some decision fatigue given the amount of choices. How many ways are there to choose exactly two ice creams from the store? Figuring this out should help quantify that decision fatigue.
+
+
+Let's approach this problem step by step:
+
+First, let's clarify what we're counting:
+
+We're choosing 2 ice creams
+They can be any combination of soft serve and frozen yogurt
+
+
+Now, let's break down the possible scenarios:
+a) Both ice creams are soft serve
+b) Both ice creams are frozen yogurt
+c) One is soft serve, one is frozen yogurt
+Let's count each scenario:
+a) Both soft serve:
+
+This is a combination with repetition allowed
+Formula: C(n+r-1, r) where n is number of flavors, r is number of selections
+C(10+2-1, 2) = C(11, 2) = 55 ways
+
+b) Both frozen yogurt:
+
+Similar to (a), but with 13 flavors
+C(13+2-1, 2) = C(14, 2) = 91 ways
+
+c) One soft serve, one frozen yogurt:
+
+We're choosing 1 from soft serve (10 choices) and 1 from frozen yogurt (13 choices)
+10 * 13 = 130 ways
+
+
+Total number of ways:
+55 + 91 + 130 = 276
+
+Therefore, there are 276 ways to choose exactly two ice creams from the store.
+This indeed quantifies the decision fatigue you're experiencing. With 276 possible combinations, it's understandable to feel overwhelmed by the choices!
