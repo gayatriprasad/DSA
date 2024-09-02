@@ -1,0 +1,38 @@
+"""
+Q) Suppose you want to generate a sample of heads and tails from a fair coin. However, you only have a biased coin available (meaning the probability of coming up with heads is different than 1/2).
+Write a simulation in python that will use your biased coin to generate a sample of heads/tails as if it were coming from a fair coin.
+"""
+
+import random
+
+def biased_coin_flip(p_heads):
+    """Simulate a flip of a biased coin."""
+    return random.random() < p_heads
+
+def fair_coin_flip_from_biased():
+    """Generate a fair coin flip using a biased coin."""
+    while True:
+        flip1 = biased_coin_flip(p_heads)
+        flip2 = biased_coin_flip(p_heads)
+        
+        if flip1 != flip2:
+            return flip1
+
+def generate_fair_sample(n):
+    """Generate a sample of n fair coin flips."""
+    return [fair_coin_flip_from_biased() for _ in range(n)]
+
+# Simulation parameters
+p_heads = 0.7  # probability of heads for the biased coin
+sample_size = 10000
+
+# Run simulation
+fair_sample = generate_fair_sample(sample_size)
+
+# Calculate results
+heads_count = sum(fair_sample)
+tails_count = sample_size - heads_count
+
+print(f"Sample size: {sample_size}")
+print(f"Heads: {heads_count} ({heads_count/sample_size:.2%})")
+print(f"Tails: {tails_count} ({tails_count/sample_size:.2%})")
