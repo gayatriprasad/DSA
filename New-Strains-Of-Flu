@@ -1,0 +1,29 @@
+Problem
+
+You go to see the doctor about a cough you've had for a while. The doctor selects you at random to have a blood test for a new strain of flu, which for the purposes of this exercise we will say is currently suspected to affect 1 in 10,000 people in the US. The test is 99% accurate, in the sense that the probability of a false positive is 1%.
+
+The probability of a false negative is zero. You test positive. What is the new probability that you have this strain of flu?
+
+Let's approach this step-by-step using Bayes' theorem. This is a classic problem in conditional probability.
+
+First, let's define our events:
+A: You have the flu
+B: You test positive
+We're given the following probabilities:
+P(A) = 1/10,000 = 0.0001 (prevalence of the flu)
+P(B|A) = 1 (probability of testing positive if you have the flu, since false negative rate is zero)
+P(B|not A) = 0.01 (probability of testing positive if you don't have the flu, i.e., false positive rate)
+We want to find P(A|B), the probability that you have the flu given that you tested positive.
+Bayes' theorem states:
+P(A|B) = [P(B|A) * P(A)] / P(B)
+We need to calculate P(B), the probability of testing positive:
+P(B) = P(B|A) * P(A) + P(B|not A) * P(not A)
+= 1 * 0.0001 + 0.01 * (1 - 0.0001)
+≈ 0.0001 + 0.00999
+≈ 0.01009
+Now we can apply Bayes' theorem:
+P(A|B) = [1 * 0.0001] / 0.01009
+≈ 0.0099 or about 0.99%
+
+Therefore, even though you tested positive, the probability that you actually have this strain of flu is only about 0.99% or roughly 1%.
+This counterintuitive result is due to the low prevalence of the disease in the population. Even with a 99% accurate test, most positive results will be false positives when testing for a rare condition.
