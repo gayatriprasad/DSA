@@ -1,0 +1,35 @@
+Question
+
+Suppose you're consulting for a school district, and the head of the school district thinks the students have above average intelligence. A random sample of thirty students have a mean IQ score of 112. Is there sufficient evidence to support the head's claim?
+
+You can assume the mean IQ score across the population of all students (e.g. including students outside the head's school district) is 100, with a standard deviation of 15.
+
+To answer this question, we need to perform a hypothesis test. Let's approach this step-by-step:
+
+First, let's define our hypotheses:
+H₀ (Null hypothesis): μ = 100 (The mean IQ of the district's students is equal to the population mean)
+H₁ (Alternative hypothesis): μ > 100 (The mean IQ of the district's students is greater than the population mean)
+We'll use a significance level of α = 0.05 (standard for most tests).
+We know:
+
+Sample mean (x̄) = 112
+Population mean (μ₀) = 100
+Population standard deviation (σ) = 15
+Sample size (n) = 30
+
+
+We'll use a z-test because we know the population standard deviation.
+The formula for the z-statistic is:
+z = (x̄ - μ₀) / (σ / √n)
+Let's calculate:
+z = (112 - 100) / (15 / √30)
+z = 12 / (15 / 5.477)
+z = 12 / 2.739
+z = 4.38
+Now, we need to find the p-value for this z-score. Using a standard normal distribution table or calculator, we find:
+p-value ≈ 0.0000059
+Compare the p-value to our significance level:
+0.0000059 < 0.05
+Decision: Since the p-value is less than our significance level, we reject the null hypothesis.
+
+Conclusion: There is sufficient evidence to support the head's claim that the students in this school district have above average intelligence. The sample data suggests that the mean IQ in this district is significantly higher than the population average of 100, and this difference is statistically significant at the 0.05 level.
