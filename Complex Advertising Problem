@@ -1,0 +1,51 @@
+**Question** 
+
+Suppose you're working for a social media company that has a feature similar to Facebook's newsfeed. The company has two options for serving ads within their newsfeed:
+
+    Out of every 25 stories, one will be an ad
+    Every story has a 4% chance of being an ad
+
+For each option, what is the expected number of ads shown in 100 news stories? If we go with the second option, what is the chance a user will be shown only a single ad in 100 stories? What about no ads at all?
+
+**Answer** 
+
+To solve this problem, let's break it down into steps and calculate the expected number of ads for each option, as well as the probabilities requested for the second option.
+
+Option 1: Out of every 25 stories, one will be an ad
+
+For 100 news stories:
+Expected number of ads = 100 / 25 = 4 ads
+
+Option 2: Every story has a 4% chance of being an ad
+
+For 100 news stories:
+Expected number of ads = 100 * 0.04 = 4 ads
+Interestingly, both options result in the same expected number of ads.
+For the second option, we need to calculate:
+a) The chance a user will be shown only a single ad in 100 stories
+b) The chance a user will be shown no ads at all in 100 stories
+To calculate these probabilities, we can use the binomial distribution. 
+
+Python Script for Binomial Distribution: 
+
+import math
+
+def binomial_probability(n, k, p):
+    return math.comb(n, k) * (p ** k) * ((1 - p) ** (n - k))
+
+# Parameters
+n = 100  # number of stories
+p = 0.04  # probability of an ad for each story
+
+# Calculate probability of exactly one ad
+prob_one_ad = binomial_probability(n, 1, p)
+
+# Calculate probability of no ads
+prob_no_ads = binomial_probability(n, 0, p)
+
+# Calculate expected number of ads
+expected_ads = n * p
+
+print(f"Expected number of ads in 100 stories: {expected_ads}")
+print(f"Probability of exactly one ad in 100 stories: {prob_one_ad:.6f}")
+print(f"Probability of no ads in 100 stories: {prob_no_ads:.6f}")
